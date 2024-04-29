@@ -24,14 +24,15 @@ jobs:
     steps:
       - name: Checkout self
         uses: actions/checkout@v4
-        with:
-          path: main
 
       - name: Checkout arcane-operator
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-operator
           path: arcane-operator
+
+      - name: Anything 
+        run: ls 
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
