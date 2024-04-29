@@ -40,7 +40,7 @@ jobs:
         run: find . -name docfx.json
 
       - name: DocFX Build
-        run: docfx /usr/bin/bash/docfx.json
+        run: docfx docfx.json
         continue-on-error: false
 
       - name: Upload artifact
