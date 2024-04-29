@@ -27,13 +27,6 @@ jobs:
         with:
           repository: SneaksAndData/arcane-operator
 
-      - name: Verify Checkout
-        run: |
-          echo "Current directory:"  
-          pwd  
-          echo "Directory contents:"  
-          ls
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -43,8 +36,11 @@ jobs:
       - name: Setup DocFX
         run: dotnet tool install --global docfx
 
+      - name: Find docfx.json
+        run: find . -name docfx.json
+
       - name: DocFX Build
-        run: docfx <docfx-project-path>/docfx.json
+        run: docfx docfx.json
         continue-on-error: false
 
       - name: Upload artifact
