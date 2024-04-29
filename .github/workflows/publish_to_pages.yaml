@@ -22,8 +22,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout self
         uses: actions/checkout@v4
+
+      - name: Checkout arcane-operator
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-operator
+          path: arcane-operator
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
