@@ -36,11 +36,8 @@ jobs:
       - name: Setup DocFX
         run: dotnet tool update -g docfx
 
-      - name: Find docfx.json
-        run: find . -name docfx.json
-
       - name: DocFX Build
-        run: docfx ./docfx.json
+        run: docfx docfx.json
         continue-on-error: false
 
       - name: Upload artifact
