@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 run-name: Deploying ${{github.ref_name}} to ${{ inputs.environment }} by @${{ github.actor }}
 
 on:
-  workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - main
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
