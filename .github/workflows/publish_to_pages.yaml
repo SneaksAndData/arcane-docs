@@ -24,8 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          repository: SneaksAndData/arcane-operator
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -37,7 +35,7 @@ jobs:
         run: dotnet tool update -g docfx
 
       - name: DocFX Build
-        run: docfx arcane-docs/docfx.json
+        run: docfx docfx.json
         continue-on-error: false
 
       - name: Upload artifact
