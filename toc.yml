@@ -1,4 +1,4 @@
 items:
-- name: Arcane Components Reference
+- name: Components
   items:
-  - href: arcane-operator/index.html
+  - href: ./arcane-operator/index.html
