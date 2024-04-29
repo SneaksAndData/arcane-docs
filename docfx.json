@@ -9,18 +9,7 @@
           ]
         }
       ],
-      "dest": "api"
-    },
-    {
-      "src": [
-        {
-          "src": ".",
-          "files": [
-            "**/*.md"
-          ]
-        }
-      ],
-      "dest": ""
+      "dest": "arcane-operator"
     }
   ],
   "build": {
@@ -47,8 +36,8 @@
       "modern"
     ],
     "globalMetadata": {
-      "_appName": "arcane-operator-docs",
-      "_appTitle": "arcane-operator-docs",
+      "_appName": "Arcane",
+      "_appTitle": "Arcane Documentation",
       "_enableSearch": true,
       "pdf": true
     }
