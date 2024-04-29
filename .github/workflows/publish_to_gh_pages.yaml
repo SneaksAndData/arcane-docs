@@ -28,36 +28,25 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: "."
-      #
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
 
       - name: Setup DocFX
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.x
+         run: dotnet tool install --global docfx
 
       - name: Install dependencies
         run: dotnet restore
 
       - name: DocFX Build
-        working-directory: docs
-        run: docfx docfx.json
+        run: docfx <docfx-project-path>/docfx.json
         continue-on-error: false
 
-      - name: Publish
-        if: github.event_name == 'push'
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_site
-          force_orphan: true
-      #
+          # Upload entire repository
+          path:  '<docfx-project-path>/_site'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
