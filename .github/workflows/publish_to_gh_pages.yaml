@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-operator
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -33,9 +35,6 @@ jobs:
 
       - name: Setup DocFX
         run: dotnet tool install --global docfx
-
-      - name: Install dependencies
-        run: dotnet restore
 
       - name: DocFX Build
         run: docfx <docfx-project-path>/docfx.json
