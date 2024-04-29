@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout self
         uses: actions/checkout@v4
+        with:
+          path: main
 
       - name: Checkout arcane-operator
         uses: actions/checkout@v4
