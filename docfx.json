@@ -1,0 +1,56 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "./arcane-operator/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "api"
+    },
+    {
+      "src": [
+        {
+          "src": ".",
+          "files": [
+            "**/*.md"
+          ]
+        }
+      ],
+      "dest": ""
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "arcane-operator-docs",
+      "_appTitle": "arcane-operator-docs",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}
