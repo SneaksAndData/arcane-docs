@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "src": "../arcane-operator/src",
+          "src": "./arcane-operator/src",
           "files": [
             "**/*.csproj"
           ]
