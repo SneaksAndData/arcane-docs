@@ -1,7 +1,7 @@
 items:
   - name: Home
-    href: ./arcane-operator/index.html
-  - name: Components_v2
+    href: ./index.html
+  - name: All Components
     items:
       - name: arcane-operator
         href: ./arcane-operator/index.html
