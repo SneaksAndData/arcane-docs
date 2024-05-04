@@ -1,9 +1,11 @@
 items:
   - name: Home
     href: ./index.html
-  - name: All Components
+  - name: Components
     items:
       - name: arcane-operator
         href: ./arcane-operator/index.html
       - name: arcane-framework
         href: ./arcane-framework/index.html
+      - name: arcane-stream-rest-api
+        href: ./arcane-stream-rest-api/index.html
