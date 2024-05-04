@@ -1,4 +1,9 @@
 items:
-- name: Components
-  items:
-  - href: ./arcane-operator/index.html
+  - name: Home
+    href: ./arcane-operator/index.html
+  - name: Components
+    items:
+      - name: arcane-operator
+        href: ./arcane-operator/index.html
+      - name: arcane-framework
+        href: ./arcane-framework/index.html

@@ -7,3 +7,7 @@
 5. An index page with human-friendly description and use cases
 6. Instructions on how to add a repository to the generation process
 7. Update hostname
+
+https://dotnet.github.io/docfx/docs/table-of-contents.html
+
+https://stackoverflow.com/questions/74799329/docfx-custom-navigation
