@@ -30,6 +30,12 @@ jobs:
           repository: SneaksAndData/arcane-operator
           path: arcane-operator
 
+      - name: Checkout arcane-framework
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-framework
+          path: arcane-framework
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
