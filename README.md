@@ -1,12 +1,12 @@
 ## TBD:
 
-[x] Create documentation for multiple repos
-[x] Create a dropdown menu so a user can navigate between Arcane's components
-[] Versioning navigation for users (main vs latest tag)
-[] An index page with human-friendly description and use cases (?)
-[] Instructions on how to add a repository to the generation process
-[] Update hostname (?)
-[] An action should be run on deployment, not on PR
+- [x] Create documentation for multiple repos
+- [x] Create a dropdown menu so a user can navigate between Arcane's components
+- [] Versioning navigation for users (main vs latest tag)
+- [] An index page with human-friendly description and use cases (?)
+- [] Instructions on how to add a repository to the generation process
+- [] Update hostname (?)
+- [] An action should be run on deployment, not on PR
 
 ## Useful info:
 
