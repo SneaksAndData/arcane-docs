@@ -10,6 +10,17 @@
         }
       ],
       "dest": "arcane-operator"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-framework/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-framework"
     }
   ],
   "build": {
