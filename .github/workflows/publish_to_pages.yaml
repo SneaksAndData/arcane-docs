@@ -7,7 +7,6 @@ on:
     branches:
       - main
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -31,8 +30,11 @@ jobs:
           repository: SneaksAndData/arcane-operator
           path: arcane-operator
 
-      - name: Anything 
-        run: ls 
+      - name: Checkout arcane-framework
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-framework
+          path: arcane-framework
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
