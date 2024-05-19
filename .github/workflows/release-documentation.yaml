@@ -1,5 +1,5 @@
-name: Deploy to GitHub Pages
-run-name: Deploying to GitHub Pages by @${{ github.actor }}
+name: Release docs
+run-name: Releasing by @${{ github.actor }}
 
 # temporary solution to test without merging to main
 on:
