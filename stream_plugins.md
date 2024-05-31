@@ -1,7 +1,7 @@
 # How to develop an Arcane Streaming plugin
 
 Each Arcane plugin should have a Helm chart that has a Custom Resource definition that allows users to configure the plugin.
-The CRD must be namespaced and provide the follwing fields:
+The CRD must be namespaced and provide the following fields:
 - `spec`: The configuration of the plugin.
 - `status`: The status of the plugin. The status layout **must** follow the following schema:
 
