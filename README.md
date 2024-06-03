@@ -17,4 +17,4 @@ The action runs on the latest version of Ubuntu.
 
 ## Contributing
 
-Feel free to open a new [Issue](https://github.com/SneaksAndData/arcane-docs/issues) in case of any suggestions.
+Feel free to open a new [Issue](https://github.com/SneaksAndData/arcane-docs/issues) in case of any suggestions. Use [our contributing guidlines](https://github.com/SneaksAndData/arcane-docs/blob/main/contributing.md) for more info.
