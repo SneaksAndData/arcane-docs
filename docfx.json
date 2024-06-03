@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "src": "./arcane-operator/src",
+          "src": "./arcane-operator-latest/src",
           "files": [
             "**/*.csproj"
           ]
@@ -14,7 +14,7 @@
         {
       "src": [
         {
-          "src": "./arcane-framework/src",
+          "src": "./arcane-framework-latest/src",
           "files": [
             "**/*.csproj"
           ]
