@@ -26,10 +26,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get Previous Release Tag
-        id: previous-release
-        uses: actions/get-previous-release-action@v1
-
       - name: Get Latest Release Tag
         id: latest-release
         run: echo "::set-output name=tag::$(curl --silent "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest" | jq -r '.tag_name')"
@@ -41,26 +37,12 @@ jobs:
           ref: ${{ steps.latest-release.outputs.tag }}
           path: arcane-operator-latest
 
-      - name: Checkout arcane-operator (previous release)
-        uses: actions/checkout@v4
-        with:
-          repository: SneaksAndData/arcane-operator
-          ref: ${{ steps.previous-release.outputs.tag }}
-          path: arcane-operator-previous
-
       - name: Checkout arcane-framework (latest release)
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-framework
           ref: ${{ steps.latest-release.outputs.tag }}
           path: arcane-framework-latest
-
-      - name: Checkout arcane-framework (previous release)
-        uses: actions/checkout@v4
-        with:
-          repository: SneaksAndData/arcane-framework
-          ref: ${{ steps.previous-release.outputs.tag }}
-          path: arcane-framework-previous
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
