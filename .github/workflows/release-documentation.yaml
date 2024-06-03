@@ -37,27 +37,25 @@ jobs:
           path: arcane-operator-previous
           fetch-depth: 0
 
-      - name: Determine previous release commit for  arcane-operator
+      - name: Determine previous release commit for arcane-operator
         run: |
-          cd arcane-operator-previous
-          git fetch --depth=100 
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^)
-          echo "Previous release tag: $PREVIOUS_TAG"
-          git checkout $PREVIOUS_TAG
-        id: prev_release
+          git fetch --tags
+          SECOND_LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
+          echo "Checking previous out tag: $SECOND_LAST_TAG"
+          git checkout $SECOND_LAST_TAG
 
       - name: Verify current tag in previous release
         run: |
           cd arcane-operator-previous
-          PREVIOUS_TAG_CHECK=$(git describe --tags --abbrev=0)
-          echo "Current tag in previous release: $PREVIOUS_TAG_CHECK"
+          CURRENT_TAG=$(git describe --tags --exact-match 2>/dev/null || echo "No exact tag match at HEAD")
+          echo "Current tag in previous release: $CURRENT_TAG"
         shell: bash
 
       - name: Verify current tag in latest release
         run: |
           cd arcane-operator-latest
-          PREVIOUS_TAG_CHECK=$(git describe --tags --abbrev=0)
-          echo "Current tag in previous release: $PREVIOUS_TAG_CHECK"
+          CURRENT_TAG=$(git describe --tags --exact-match 2>/dev/null || echo "No exact tag match at HEAD")
+          echo "Current tag in latest release: $CURRENT_TAG"
         shell: bash
 
       - name: Checkout arcane-framework (latest release)
