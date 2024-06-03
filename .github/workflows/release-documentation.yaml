@@ -1,5 +1,5 @@
 name: Release docs
-run-name: Releasing by @${{ github.actor }}
+run-name: Releasing docs by @${{ github.actor }}
 
 # temporary solution to test without merging to main
 on:
@@ -39,6 +39,7 @@ jobs:
 
       - name: Determine previous release commit for arcane-operator
         run: |
+          cd arcane-operator-previous
           git fetch --tags
           SECOND_LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
           echo "Checking previous out tag: $SECOND_LAST_TAG"
