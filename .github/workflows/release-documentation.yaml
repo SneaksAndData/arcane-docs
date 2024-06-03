@@ -30,6 +30,9 @@ jobs:
           repository: SneaksAndData/arcane-operator
           fetch-depth: 0
           path: arcane-operator-latest
+        run: |
+          echo "Latest tag:"
+          git describe --tags --abbrev=0
 
       - name: Checkout arcane-framework (latest release)
         uses: actions/checkout@v4
