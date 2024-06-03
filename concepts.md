@@ -41,3 +41,18 @@ secret that should be serializable to the `V1SecretEnvSource` object.
 
 The list of the `StreamDefinition` fields that should be serialized to a V1SecretEnvSource object
 defined in the `StreamClass` object managed by the stream plugin Helm chart.
+
+## Communication between Arcane operator and Stream Plugin
+The communication between the stream runner and the Arcane operator is done in two ways:
+1. The Arcane Operator creates a streaming job in the Kubernetes cluster and provides the stream configuration
+   through the environment variables.
+ 
+2. The stream runner can finish with the `Success` status and in this case, it will be restarted in the streaming mode.
+ 
+3. The stream runner can finish with the `Failed` status and in this case, the Operator will create the
+   `arcane.streaming.sneaksanddata.com/state: crash-loop` annotation on the stream definition and stop processing the
+   SD events until operator removes this annotation manually.
+
+4. The stream runner may annotate the streaming job with the `arcane.streaming.sneaksanddata.com/state: schema-mismatch`
+   annotation and exit with the `Success` status. In this case, the operator restarts the stream with the `backfill` mode
+   and removes `arcane/state: schema-mismatch` annotation from the stream definition object.
