@@ -254,7 +254,7 @@ The stream operator requires the following permissions:
 - To patch the stream definition objects in the namespace where stream jobs are running.
 - To patch the status of the stream definition objects in the same namespace.
 
-It's the responsibility of the stream plugin to provide the correct permissions for the actions described above.
+Providing the permissions required for the actions described above is responsibility of Helm Chart for the stream plugin.
 
 # Defining the SteamClass Resource
 
