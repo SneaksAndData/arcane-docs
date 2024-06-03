@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout self
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Get Previous Release Tag
         id: previous-release
