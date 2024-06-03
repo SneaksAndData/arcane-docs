@@ -23,25 +23,18 @@ jobs:
     steps:
       - name: Checkout self
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Get Latest Release Tag
-        id: latest-release
-        run: echo "::set-output name=tag::$(curl --silent "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest" | jq -r '.tag_name')"
 
       - name: Checkout arcane-operator (latest release)
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-operator
-          ref: ${{ steps.latest-release.outputs.tag }}
+          fetch-depth: 0
           path: arcane-operator-latest
 
       - name: Checkout arcane-framework (latest release)
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-framework
-          ref: ${{ steps.latest-release.outputs.tag }}
           path: arcane-framework-latest
 
       - name: Setup Pages
