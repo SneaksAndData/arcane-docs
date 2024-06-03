@@ -39,7 +39,7 @@ jobs:
 
       - name: Determine previous release commit
         run: |
-          cd operator-previous
+          cd arcane-operator-previous
           git fetch --depth=100 
           PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^)
           echo "Previous release tag: $PREVIOUS_TAG"
