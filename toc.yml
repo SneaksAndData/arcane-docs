@@ -5,11 +5,11 @@ items:
     items:
       - name: main
         href: ./arcane-operator-main/README.html
-      - name: previous release
+      - name: operator previous release
         href: ./arcane-operator-previous/README.html
   - name: arcane-framework
     items:
       - name: main
         href: ./arcane-framework-main/README.html
-      - name: previous release
+      - name: framework previous release
         href: ./arcane-framework-previous/README.html
