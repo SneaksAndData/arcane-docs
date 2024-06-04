@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-framework
-          path: arcane-framework-main
+          path: arcane-framework-previous
           fetch-depth: 0
 
       - name: Determine previous release commit for arcane-framework
