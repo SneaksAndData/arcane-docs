@@ -66,7 +66,7 @@ When the backfill is completed, the streaming job restarts in the streaming mode
 To suspend the streaming job temporarily, the streaming job may be annotated with the `arcane/state: suspended`.
 
 > [!NOTE]
-> if the stream definition was created in a suspended state and unsuspended later, the streaming job will start in
+> If the stream definition was created in a suspended state and unsuspended later, the streaming job will start in
 > streaming mode, not in backfill mode. This behavior is intended to prevent unnecessary backfilling of data in
 > case of migration of the streaming job from one cluster to another, or any other activity that requires the stream
 > definition to be recreated.
