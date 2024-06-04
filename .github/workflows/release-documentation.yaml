@@ -45,18 +45,26 @@ jobs:
           echo "Checking previous out tag: $SECOND_LAST_TAG"
           git checkout $SECOND_LAST_TAG
 
-      - name: Verify tag in previous release
-        run: |
-          cd arcane-operator-previous
-          CURRENT_TAG=$(git describe --tags --exact-match 2>/dev/null || echo "No exact tag match at HEAD")
-          echo "Current tag in previous release: $CURRENT_TAG"
-        shell: bash
-
       - name: Checkout arcane-framework (main)
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-framework
           path: arcane-framework-main
+
+      - name: Checkout arcane-framework (previous release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-framework
+          path: arcane-framework-main
+          fetch-depth: 0
+
+      - name: Determine previous release commit for arcane-framework
+        run: |
+          cd arcane-framework-previous
+          git fetch --tags
+          SECOND_LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
+          echo "Checking previous out tag: $SECOND_LAST_TAG"
+          git checkout $SECOND_LAST_TAG
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

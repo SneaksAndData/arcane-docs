@@ -20,6 +20,28 @@
           ]
         }
       ],
+      "dest": "arcane-framework-main"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-framework-main/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-framework-previous"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-framework-previous/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
       "dest": "arcane-operator-previous"
     }
   ],
