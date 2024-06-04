@@ -11,5 +11,5 @@ items:
     items:
       - name: main
         href: ./arcane-framework-main/README.html
-      - name: previous release
+      - name: previous-release
         href: ./arcane-framework-previous/README.html
