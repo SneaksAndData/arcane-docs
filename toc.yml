@@ -4,6 +4,6 @@ items:
   - name: Components
     items:
       - name: arcane-operator
-        href: ./arcane-operator/README.html
+        href: ./arcane-operator-main/README.html
       - name: arcane-framework
-        href: ./arcane-framework/README.html
+        href: ./arcane-operator-previous/README.html
