@@ -97,7 +97,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add toc.yml
           git diff-index --quiet HEAD || git commit -m "Update toc.yml with new version tag"
-          git push origin HEAD: docs
+          git push origin HEAD:docs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
