@@ -58,20 +58,22 @@ The communication between the stream runner and the Arcane operator is done in t
    and removes `arcane/state: schema-mismatch` annotation from the stream definition object.
 
 ## Streaming Job lifecycle
-The streaming job when added always starts in backfill mode, this ensures that the streaming job fetches all the
-data available from the source on the first run.
+The streaming job always starts in backfill mode when added. This ensures that the streaming job fetches all
+the data available from the source on the first run.
 
-When the backfill is completed, the streaming job is restarted in the streaming mode.
+When the backfill is completed, the streaming job restarts in the streaming mode.
 
-To suspend the straming job temporarily, the streaming job may be annotated with the `arcane/state: suspended`
+To suspend the streaming job temporarily, the streaming job may be annotated with the `arcane/state: suspended`.
 
 > [!NOTE]
-> if the stream definition was created in suspended state and unsupended later, the streaming job will start in
-> streaming mode, not in backfill mode. This behavior is intended to prevent the unnecessaryy backfilling of the data in
-> case of migration of the streaming job from one cluster to another or any other activity that requires the stream
+> if the stream definition was created in a suspended state and unsuspended later, the streaming job will start in
+> streaming mode, not in backfill mode. This behavior is intended to prevent unnecessary backfilling of data in
+> case of migration of the streaming job from one cluster to another, or any other activity that requires the stream
 > definition to be recreated.
 
-If the streaming job finished in the success state, the streaming job will be restarted in the streaming mode. It
+If the streaming job finished in the success state, the streaming job will be restarted in the streaming mode. If
 the streaming job is finished in the failed state, the streaming job will be annotated with the
 `arcane/state: crash-loop` and will not be restarted until the annotation is removed. This behavior is
 intended to prevent misconfiguration of the streaming job that may lead to the infinite restart loop.
+
+The ability to change the lifecycle annotations to be implemented in the future.
