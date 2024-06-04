@@ -48,7 +48,7 @@ jobs:
       - name: Modify toc.yaml for arcane-operator
         run: |
           # Replace 'previous release' with the second last tag in 'arcane-operator' section
-          sed -i '/- - name: arcane-operator/ { s|href: .*|href: ./arcane-operator-'$TAG'/README.html|;  s|name: .*|name: Version '$TAG'| }' ../toc.yml
+          sed -i '/- - name: arcane-operator/ { s|href: .*|href: ./arcane-operator-'$TAG'/README.html|;  s|name: .*|name: Version '$TAG'| }' ../../toc.yml
 
       - name: Checkout arcane-framework (main)
         uses: actions/checkout@v4
@@ -74,7 +74,7 @@ jobs:
       - name: Modify toc.yaml for arcane-framework
         run: |
           # Replace 'previous release' with the second last tag in 'arcane-framework' section
-          sed -i '/- name: arcane-framework/,/- name:.*$/ { s|href: .*|href: ./arcane-framework-'$TAG'/README.html|; s|name: .*|name: Version '$TAG'| }' ../toc.yml
+          sed -i '/- name: arcane-framework/,/- name:.*$/ { s|href: .*|href: ./arcane-framework-'$TAG'/README.html|; s|name: .*|name: Version '$TAG'| }' ../../toc.yml
 
       - name: Commit and push changes if toc.yaml changed
         run: |
