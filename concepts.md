@@ -56,3 +56,22 @@ The communication between the stream runner and the Arcane operator is done in t
 4. The stream runner may annotate the streaming job with the `arcane.streaming.sneaksanddata.com/state: schema-mismatch`
    annotation and exit with the `Success` status. In this case, the operator restarts the stream with the `backfill` mode
    and removes `arcane/state: schema-mismatch` annotation from the stream definition object.
+
+## Streaming Job lifecycle
+The streaming job when added always starts in backfill mode, this ensures that the streaming job fetches all the
+data available from the source on the first run.
+
+When the backfill is completed, the streaming job is restarted in the streaming mode.
+
+To suspend the straming job temporarily, the streaming job may be annotated with the `arcane/state: suspended`
+
+> [!NOTE]
+> if the stream definition was created in suspended state and unsupended later, the streaming job will start in
+> streaming mode, not in backfill mode. This behavior is intended to prevent the unnecessaryy backfilling of the data in
+> case of migration of the streaming job from one cluster to another or any other activity that requires the stream
+> definition to be recreated.
+
+If the streaming job finished in the success state, the streaming job will be restarted in the streaming mode. It
+the streaming job is finished in the failed state, the streaming job will be annotated with the
+`arcane/state: crash-loop` and will not be restarted until the annotation is removed. This behavior is
+intended to prevent misconfiguration of the streaming job that may lead to the infinite restart loop.
