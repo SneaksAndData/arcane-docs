@@ -31,12 +31,9 @@ jobs:
 
       - name: Create and Checkout 'docs' Branch
         run: |
-          # Check if the 'docs' branch already exists in the remote repository
-          if git ls-remote --heads origin docs | grep docs; then
-            # If 'docs' branch exists, checkout that branch
+          if git ls-remote --heads origin docs | grep -q docs; then
             git checkout docs
           else
-            # If not, create and checkout a new 'docs' branch based on main
             git checkout -b docs origin/main
 
       - name: Checkout arcane-operator (main)
