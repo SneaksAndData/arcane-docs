@@ -50,6 +50,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           TAG=$(cat arcane-operator-previous/SECOND_LAST_TAG.txt) 
+          echo "Checking previous out tag: $TAG"
           sed -i "s|- name: previous release|- name: $TAG|g" toc.yml
 
       - name: Checkout arcane-framework (main)
