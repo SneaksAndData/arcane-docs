@@ -45,6 +45,11 @@ jobs:
           echo "Checking previous out tag: $SECOND_LAST_TAG"
           git checkout $SECOND_LAST_TAG
 
+     - name: Modify toc.yaml for arcane-operator
+        run: |
+          # Replace 'previous release' with the second last tag in 'arcane-operator' section
+          sed -i '/- - name: arcane-operator/ { /previous release/ s|href: .*|href: ./arcane-operator-'$TAG'/README.html|; /previous release/ s|name: .*|name: Version '$TAG'| }' toc.yaml
+
       - name: Checkout arcane-framework (main)
         uses: actions/checkout@v4
         with:
@@ -65,6 +70,19 @@ jobs:
           SECOND_LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
           echo "Checking previous out tag: $SECOND_LAST_TAG"
           git checkout $SECOND_LAST_TAG
+
+     - name: Modify toc.yaml for arcane-framework
+        run: |
+          # Replace 'previous release' with the second last tag in 'arcane-framework' section
+          sed -i '/- name: arcane-framework/,/- name:.*$/ { /previous release/ s|href: .*|href: ./arcane-framework-'$TAG'/README.html|; /previous release/ s|name: .*|name: Version '$TAG'| }' toc.yaml
+
+    - name: Commit and push changes if toc.yaml changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add toc.yaml
+          git diff-index --quiet HEAD || git commit -m "Update toc.yaml with new version tag"
+          git push
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
