@@ -60,7 +60,7 @@ jobs:
 
       - name: Determine previous release commit for arcane-framework
         run: |
-          cd arcane-framework-previous
+          cd arcane-framework-previoushttps://github.com/SneaksAndData/arcane-docs/actions/runs/9373841496
           git fetch --tags
           SECOND_LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
           echo "Checking previous out tag: $SECOND_LAST_TAG"
