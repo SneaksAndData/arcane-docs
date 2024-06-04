@@ -23,21 +23,6 @@ jobs:
     steps:
       - name: Checkout self
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Git Configuration
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-      - name: Create and Checkout 'docs' Branch
-        run: |
-          if git ls-remote --heads origin docs | grep -q docs; then
-            git checkout docs
-          else
-            git checkout -b docs origin/main
-          fi
 
       - name: Checkout arcane-operator (main)
         uses: actions/checkout@v4
@@ -90,14 +75,6 @@ jobs:
         run: |
           # Replace 'previous release' with the second last tag in 'arcane-framework' section
           sed -i '/- name: arcane-framework/,/- name:.*$/ { s|href: .*|href: ./arcane-framework-'$TAG'/README.html|; s|name: .*|name: Version '$TAG'| }' toc.yml
-
-      - name: Commit and push changes if toc.yml changed
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add toc.yml
-          git diff-index --quiet HEAD || git commit -m "Update toc.yml with new version tag"
-          git push origin HEAD:docs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
