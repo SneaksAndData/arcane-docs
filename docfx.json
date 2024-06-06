@@ -20,7 +20,7 @@
           ]
         }
       ],
-      "dest": "arcane-framework-main"
+      "dest": "arcane-operator-previous"
     } ,
         {
       "src": [
@@ -31,7 +31,7 @@
           ]
         }
       ],
-      "dest": "arcane-framework-previous"
+      "dest": "arcane-framework-main"
     } ,
         {
       "src": [
@@ -42,7 +42,7 @@
           ]
         }
       ],
-      "dest": "arcane-operator-previous"
+      "dest": "arcane-framework-previous"
     }
   ],
   "build": {
