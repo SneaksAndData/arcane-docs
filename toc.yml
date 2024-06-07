@@ -1,27 +1,27 @@
 items:
   - name: Home
     href: ./index.html
-  - name: arcane-operator
+  - name: Arcane Operator
     items:
       - name: main
         href: ./arcane-operator-main/README.html
       - name: operator previous release
         href: ./arcane-operator-previous/README.html
-  - name: arcane-framework
+  - name: Arcane Framework
     items:
       - name: main
         href: ./arcane-framework-main/README.html
       - name: framework previous release
         href: ./arcane-framework-previous/README.html
-  - name: stream plugins
+  - name: Stream plugins
     items:
-      - name: rest-api
+      - name: REST API
         items:
           - name: main
             href: ./arcane-rest-api-main/README.html
           - name: restapi previous release
             href: ./arcane-rest-api-previous/README.html
-      - name: sql-server
+      - name: Sql Server
         items:
           - name: main
             href:

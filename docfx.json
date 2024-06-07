@@ -43,7 +43,29 @@
         }
       ],
       "dest": "arcane-framework-previous"
-    }
+    },
+        {
+      "src": [
+        {
+          "src": "./arcane-rest-api-main/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-rest-api-main"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-rest-api-previous/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-rest-api-previous"
+    } 
   ],
   "build": {
     "content": [
