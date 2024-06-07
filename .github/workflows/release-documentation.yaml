@@ -40,7 +40,7 @@ jobs:
         run: |
           cd arcane-operator-latest
           git fetch --tags
-          LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
+          LAST_TAG=$(git tag --sort=-version:refname | tail -n 1 | head -1)
           echo "Checking latest out tag: $LAST_TAG"
           echo "$LAST_TAG" > LAST_TAG.txt
           git checkout $LAST_TAG
@@ -49,7 +49,7 @@ jobs:
           cd ${{ github.workspace }}
           TAG=$(cat arcane-operator-latest/LAST_TAG.txt) 
           echo "Checking latest out tag: $TAG"
-          sed -i "s|- name: operator 0 release|- name: $TAG|g" toc.yml
+          sed -i "s|- name: operator 1 release|- name: $TAG|g" toc.yml
       # 2nd Latest
       - name: Checkout arcane-operator (2nd latest release)
         uses: actions/checkout@v4
@@ -61,7 +61,7 @@ jobs:
         run: |
           cd arcane-operator-2nd-latest
           git fetch --tags
-          LAST_TAG=$(git tag --sort=-version:refname | tail -n 1 | head -1)
+          LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
           echo "Checking latest out tag: $LAST_TAG"
           echo "$LAST_TAG" > LAST_TAG.txt
           git checkout $LAST_TAG
@@ -70,7 +70,7 @@ jobs:
           cd ${{ github.workspace }}
           TAG=$(cat arcane-operator-latest/LAST_TAG.txt) 
           echo "Checking latest out tag: $TAG"
-          sed -i "s|- name: operator 0 release|- name: $TAG|g" toc.yml
+          sed -i "s|- name: operator 2 release|- name: $TAG|g" toc.yml
 
       # Arcane Framework
       - name: Checkout arcane-framework (main)
@@ -89,7 +89,7 @@ jobs:
         run: |
           cd arcane-framework-latest
           git fetch --tags
-          LAST_TAG=$(git tag --sort=version:refname | tail -n 3 | head -1)
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 1 | head -1)
           echo "Checking latest out tag: $LAST_TAG"
           echo "$LAST_TAG" > LAST_TAG.txt
           git checkout $LAST_TAG
@@ -98,7 +98,7 @@ jobs:
           cd ${{ github.workspace }}
           TAG=$(cat arcane-framework-latest/LAST_TAG.txt)
           echo "Checking latest out tag: $TAG"
-          sed -i "s|- name: framework 0 release|- name: $TAG|g" toc.yml
+          sed -i "s|- name: framework 1 release|- name: $TAG|g" toc.yml
       # 2nd Latest
       - name: Checkout arcane-framework (2nd latest release)
         uses: actions/checkout@v4
@@ -131,7 +131,7 @@ jobs:
         run: |
           cd arcane-framework-3rd-latest
           git fetch --tags
-          LAST_TAG=$(git tag --sort=version:refname | tail -n 1 | head -1)
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 3 | head -1)
           echo "Checking 3rd latest out tag: $LAST_TAG"
           echo "$LAST_TAG" > LAST_TAG.txt
           git checkout $LAST_TAG
