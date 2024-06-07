@@ -268,7 +268,7 @@ The stream class should contain at least the following fields:
 - `secretRefs`: List of the secret references that the stream plugin uses to store the sensitive data (if any).
 
 # Advanced Features
-### Advanced stram runner lifecycle management
+### Advanced stream runner lifecycle management
 The `IStreamLifetimeService` interface is intended to provide the ability to stop the stream gracefully and to handle
 the Kubernetes pod lifecycle events. By default, it is implemented by the `StreamLifetimeService` class that triggers
 the graph KillSwitch when the pod receives the SIGTERM signal.
