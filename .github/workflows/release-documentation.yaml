@@ -40,7 +40,7 @@ jobs:
         run: |
           cd arcane-operator-latest
           git fetch --tags
-          LAST_TAG=$(git tag --sort=-version:refname | tail -n 1 | head -1)
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 1 | head -1)
           echo "Checking latest out tag: $LAST_TAG"
           echo "$LAST_TAG" > LAST_TAG.txt
           git checkout $LAST_TAG
