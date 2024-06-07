@@ -321,7 +321,7 @@ try
          // Configure datadog logging.
         .AddDatadogLogging( (_, _, configuration) => configuration.WriteTo.Console())
         
-         // Configure the required services (graph builder and stream context
+         // Configure the required services (graph builder and stream context).
         .ConfigureRequiredServices(services =>
         {
             services.AddStreamGraphBuilder<RestApiGraphBuilder, RestApiDynamicAuthStreamContext>();
