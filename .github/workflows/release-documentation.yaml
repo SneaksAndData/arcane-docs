@@ -70,7 +70,7 @@ jobs:
         run: |
           cd arcane-framework-previous
           git fetch --tags
-          SECOND_LAST_TAG=$(git tag --sort=-version:refname | tail -n 3 | head -1)
+          SECOND_LAST_TAG=$(git tag --sort=version:refname | tail -n 3 | head -1)
           echo "Checking previous out tag: $SECOND_LAST_TAG"
           echo "$SECOND_LAST_TAG" > SECOND_LAST_TAG.txt
           git checkout $SECOND_LAST_TAG

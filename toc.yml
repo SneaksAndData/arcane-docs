@@ -18,10 +18,8 @@ items:
       - name: REST API
         items:
           - name: main
-            href: ./arcane-rest-api-main/README.html
           - name: restapi previous release
-            href: ./arcane-rest-api-previous/README.html
       - name: Sql Server
         items:
           - name: main
-            href:
+          - name: sql previous release
