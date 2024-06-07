@@ -141,6 +141,7 @@ jobs:
           TAG=$(cat arcane-framework-3rdd-latest/LAST_TAG.txt)
           echo "Checking latest out tag: $TAG"
           sed -i "s|- name: framework 3 release|- name: $TAG|g" toc.yml
+      # Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
