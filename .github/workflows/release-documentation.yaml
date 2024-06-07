@@ -121,7 +121,7 @@ jobs:
           echo "Checking latest out tag: $TAG"
           sed -i "s|- name: framework 2 release|- name: $TAG|g" toc.yml
       # 3rd Latest
-      - name: Checkout arcane-framework (3rdd latest release)
+      - name: Checkout arcane-framework (3rd latest release)
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-framework
