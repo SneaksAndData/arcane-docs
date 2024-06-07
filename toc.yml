@@ -16,4 +16,12 @@ items:
   - name: stream plugins
     items:
       - name: rest-api
-        href: ./arcane-rest-api-main/README.html
+        items:
+          - name: main
+            href: ./arcane-rest-api-main/README.html
+          - name: restapi previous release
+            href: ./arcane-rest-api-previous/README.html
+      - name: sql-server
+        items:
+          - name: main
+            href:
