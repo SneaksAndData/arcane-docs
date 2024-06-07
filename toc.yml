@@ -22,6 +22,7 @@ items:
   - name: Stream plugins
     items:
       - name: REST API
+        expanded: true
         items:
           - name: main
           - name: restapi previous release
