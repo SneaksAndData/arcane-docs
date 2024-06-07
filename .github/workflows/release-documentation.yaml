@@ -138,7 +138,7 @@ jobs:
       - name: Modify toc.yml with tags for arcane-framework
         run: |
           cd ${{ github.workspace }}
-          TAG=$(cat arcane-framework-3rdd-latest/LAST_TAG.txt)
+          TAG=$(cat arcane-framework-3rd-latest/LAST_TAG.txt)
           echo "Checking latest out tag: $TAG"
           sed -i "s|- name: framework 3 release|- name: $TAG|g" toc.yml
       # Pages
