@@ -9,6 +9,8 @@ items:
         href: ./arcane-operator-latest/README.html
       - name: operator 2 release
         href: ./arcane-operator-2nd-latest/README.html
+      - name: operator 3 release
+        href: ./arcane-operator-3rd-latest/README.html
   - name: Arcane Framework
     items:
       - name: main
