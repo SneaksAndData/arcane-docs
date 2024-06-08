@@ -23,5 +23,5 @@ items:
         href: ./arcane-framework-3rd-latest/README.html
   - name: Stream plugins
     items:
-      - name: REST API v3
-        href: ./arcane-rest-api-main/README.html
+      - name: REST API 4
+        href: rest-api/toc.yml
