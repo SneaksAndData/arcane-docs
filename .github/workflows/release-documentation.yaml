@@ -61,7 +61,7 @@ jobs:
         run: |
           cd arcane-operator-2nd-latest
           git fetch --tags
-          LAST_TAG=$(git tag --sort=-version:refname | tail -n 2 | head -1)
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 2 | head -1)
           echo "Checking latest out tag: $LAST_TAG"
           echo "$LAST_TAG" > LAST_TAG.txt
           git checkout $LAST_TAG
@@ -78,11 +78,11 @@ jobs:
           repository: SneaksAndData/arcane-operator
           path: arcane-operator-3rd-latest
           fetch-depth: 0
-      - name: Determine 2nd latest release commit for arcane-operator
+      - name: Determine 3rd latest release commit for arcane-operator
         run: |
           cd arcane-operator-3rd-latest
           git fetch --tags
-          LAST_TAG=$(git tag --sort=-version:refname | tail -n 3 | head -1)
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 3 | head -1)
           echo "Checking 3rd latest out tag: $LAST_TAG"
           echo "$LAST_TAG" > LAST_TAG.txt
           git checkout $LAST_TAG
@@ -160,7 +160,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           TAG=$(cat arcane-framework-3rd-latest/LAST_TAG.txt)
-          echo "Checking latest out tag: $TAG"
+          echo "Checking 3rd latest out tag: $TAG"
           sed -i "s|- name: framework 3 release|- name: $TAG|g" toc.yml
       # Pages
       - name: Setup Pages
