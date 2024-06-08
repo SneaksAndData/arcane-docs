@@ -25,7 +25,3 @@ items:
     items:
       - name: REST API v3
         href: ./arcane-rest-api-main/README.html
-      - name: Sql Server
-        items:
-          - name: main
-          - name: sql previous release
