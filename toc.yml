@@ -23,7 +23,7 @@ items:
         href: ./arcane-framework-3rd-latest/README.html
   - name: Stream plugins
     items:
-      - name: REST API
+      - name: REST API v2
         href: rest-api/toc.yml
       - name: Sql Server
         items:
