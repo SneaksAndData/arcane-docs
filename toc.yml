@@ -24,10 +24,11 @@ items:
   - name: Stream plugins
     items:
       - name: REST API
-        expanded: true
         items:
           - name: main
+            href: ./arcane-rest-api-main/README.html
           - name: restapi previous release
+            href: ./arcane-rest-api-latest/README.html
       - name: Sql Server
         items:
           - name: main

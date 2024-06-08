@@ -102,13 +102,13 @@
         {
       "src": [
         {
-          "src": "./arcane-rest-api-previous/src",
+          "src": "./arcane-rest-api-latest/src",
           "files": [
             "**/*.csproj"
           ]
         }
       ],
-      "dest": "arcane-rest-api-previous"
+      "dest": "arcane-rest-api-latest"
     } 
   ],
   "build": {

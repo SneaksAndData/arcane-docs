@@ -162,6 +162,33 @@ jobs:
           TAG=$(cat arcane-framework-3rd-latest/LAST_TAG.txt)
           echo "Checking 3rd latest out tag: $TAG"
           sed -i "s|- name: framework 3 release|- name: $TAG|g" toc.yml
+      # REST API
+      - name: Checkout arcane-rest-api (main)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-stream-rest-api
+          path: arcane-rest-api-main
+      # Latest
+      - name: Checkout arcane-rest-api (latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-rest-api
+          path: arcane-rest-api-latest
+          fetch-depth: 0
+      - name: Determine latest release commit for arcane-rest-api
+        run: |
+          cd arcane-rest-api-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 1 | head -1)
+          echo "Checking latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-rest-api
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-rest-api-latest/LAST_TAG.txt)
+          echo "Checking latest out tag: $TAG"
+          sed -i "s|- name: rest-api 1 release|- name: $TAG|g" toc.yml
       # Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
