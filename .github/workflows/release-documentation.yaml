@@ -172,7 +172,7 @@ jobs:
       - name: Checkout arcane-rest-api (latest release)
         uses: actions/checkout@v4
         with:
-          repository: SneaksAndData/arcane-rest-api
+          repository: SneaksAndData/arcane-stream-rest-api
           path: arcane-rest-api-latest
           fetch-depth: 0
       - name: Determine latest release commit for arcane-rest-api
