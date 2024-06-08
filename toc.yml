@@ -21,10 +21,9 @@ items:
         href: ./arcane-framework-2nd-latest/README.html
       - name: framework 3 release
         href: ./arcane-framework-3rd-latest/README.html
-  - name: REST API 5
+  - name: Stream Plugins
     items:
-      - name: main
+      - name: REST API
         href: ./arcane-rest-api-main/README.html
-        items:
-          - name: REST API
-            href: ./arcane-rest-api-main/README.html
+      - name: SQL Server
+        href: sql/toc.yml
