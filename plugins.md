@@ -1,5 +1,10 @@
 # Arcane Streaming Plugin Developer Guide
 
+All Arcane streams and the Arcane operator itself are based on Akka.NET framework and the 
+[Actor Model](https://en.wikipedia.org/wiki/Actor_model). 
+Please consider the [Akka.net documentation](https://getakka.net/articles/streams/introduction.html)
+for details.
+
 The Arcane plugin consists of three main components:
 1. The stream runner which implements an akka stream that extracts data using an Akka.NET source, transforms it and
    writes data to a single sink. The output data format depends on the sink used to write data.
