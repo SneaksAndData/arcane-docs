@@ -1,25 +1,19 @@
-## TBD:
+# Arcane Docs
 
-- [x] Create documentation for multiple repos
-- [x] Create a dropdown menu so a user can navigate between Arcane's components
-- [ ] Versioning navigation for users (main vs latest tag)
-- [ ] An index page with human-friendly description and use cases (?)
-- [ ] Instructions on how to add a repository to the generation process
-- [ ] Update hostname (?)
-- [ ] An action should be run on deployment, not on PR
+Documentation for Arcane, a Kubernetes-native data streaming service based on Akka.NET. The core of this project is a Github action named `release-documentation` that uses [DocFX](https://github.com/dotnet/docfx) which is designed to automate the process of generating and deploying documentation to GitHub Pages.
 
-## Useful info:
+## Permissions
 
-- api: this is where DocFx creates documentation based on source code, e.g XML comments or csproj files
-- apidoc: this one contains Markdown files where we can override the XML comment defaults
-- articles: this is non-code documentation, for example, how-to guides or engineering guidelines
-- images: if we want to add images to our Markdown files, we can add them here
-- src: this is where we can place our CSPROJ project files used to generate source code
+The action requires the following permissions:
 
-### Important files:
+- `contents: read`: To read the contents of the repository.
+- `pages: write`: To write to the GitHub Pages site.
+- `id-token: write`: To write ID tokens.
 
-- docfx.json: this is the DocFx configuration file. We can use it to make general configuration articles, which we’ll do later in the article
-- index.md: the main page, written in markdown
-- toc.yml: the table of contents for our documentation site
+## Environment
 
-[Official documentation](https://dotnet.github.io/docfx/docs/table-of-contents.html)
+The action runs on the latest version of Ubuntu.
+
+## Contributing
+
+Feel free to open a new [Issue](https://github.com/SneaksAndData/arcane-docs/issues) in case of any suggestions. Check [our contributing guidlines](https://github.com/SneaksAndData/arcane-docs/blob/main/contributing.md) for more info.
