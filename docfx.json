@@ -3,25 +3,113 @@
     {
       "src": [
         {
-          "src": "./arcane-operator/src",
+          "src": "./arcane-operator-main/src",
           "files": [
             "**/*.csproj"
           ]
         }
       ],
-      "dest": "arcane-operator"
+      "dest": "arcane-operator-main"
     } ,
         {
       "src": [
         {
-          "src": "./arcane-framework/src",
+          "src": "./arcane-operator-latest/src",
           "files": [
             "**/*.csproj"
           ]
         }
       ],
-      "dest": "arcane-framework"
-    }
+      "dest": "arcane-operator-latest"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-operator-2nd-latest/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-operator-2nd-latest"
+    },
+        {
+      "src": [
+        {
+          "src": "./arcane-operator-3rd-latest/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-operator-3rd-latest"
+    },
+        {
+      "src": [
+        {
+          "src": "./arcane-framework-main/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-framework-main"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-framework-latest/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-framework-latest"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-framework-2nd-latest/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-framework-2nd-latest"
+    },
+        {
+      "src": [
+        {
+          "src": "./arcane-framework-3rd-latest/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-framework-3rd-latest"
+    },
+        {
+      "src": [
+        {
+          "src": "./arcane-rest-api-main/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-rest-api-main"
+    } ,
+        {
+      "src": [
+        {
+          "src": "./arcane-rest-api-latest/src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "arcane-rest-api-latest"
+    } 
   ],
   "build": {
     "content": [

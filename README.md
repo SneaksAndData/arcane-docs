@@ -1,7 +1,6 @@
 # Arcane Docs
 
-A repo that automatically creates documentation for Arcane, a Kubernetes-native data streaming service based on Akka.NET. The core of this project is a Github action named `release-documentation` that uses [DocFX](https://github.com/dotnet/docfx) which is designed to automate the process of generating and deploying documentation to GitHub Pages.
-
+Documentation for Arcane, a Kubernetes-native data streaming service based on Akka.NET. The core of this project is a Github action named `release-documentation` that uses [DocFX](https://github.com/dotnet/docfx) which is designed to automate the process of generating and deploying documentation to GitHub Pages.
 
 ## Permissions
 
@@ -17,4 +16,4 @@ The action runs on the latest version of Ubuntu.
 
 ## Contributing
 
-Feel free to open a new [Issue](https://github.com/SneaksAndData/arcane-docs/issues) in case of any suggestions. Use [our contributing guidlines](https://github.com/SneaksAndData/arcane-docs/blob/main/contributing.md) for more info.
+Feel free to open a new [Issue](https://github.com/SneaksAndData/arcane-docs/issues) in case of any suggestions. Check [our contributing guidlines](https://github.com/SneaksAndData/arcane-docs/blob/main/contributing.md) for more info.

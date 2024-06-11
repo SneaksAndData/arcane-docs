@@ -1,5 +1,5 @@
 name: Release docs
-run-name: Releasing by @${{ github.actor }}
+run-name: Releasing docs by @${{ github.actor }}
 
 # temporary solution to test without merging to main
 on:
@@ -23,19 +23,173 @@ jobs:
     steps:
       - name: Checkout self
         uses: actions/checkout@v4
-
-      - name: Checkout arcane-operator
+      # Arcane Operator
+      - name: Checkout arcane-operator (main)
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-operator
-          path: arcane-operator
+          path: arcane-operator-main
+      # Latest
+      - name: Checkout arcane-operator (latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-operator
+          path: arcane-operator-latest
+          fetch-depth: 0
+      - name: Determine latest release commit for arcane-operator
+        run: |
+          cd arcane-operator-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 1 | head -1)
+          echo "Checking latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-operator
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-operator-latest/LAST_TAG.txt) 
+          echo "Checking latest out tag: $TAG"
+          sed -i "s|- name: operator 1 release|- name: $TAG|g" toc.yml
+      # 2nd Latest
+      - name: Checkout arcane-operator (2nd latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-operator
+          path: arcane-operator-2nd-latest
+          fetch-depth: 0
+      - name: Determine 2nd latest release commit for arcane-operator
+        run: |
+          cd arcane-operator-2nd-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 2 | head -1)
+          echo "Checking latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-operator
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-operator-2nd-latest/LAST_TAG.txt) 
+          echo "Checking latest out tag: $TAG"
+          sed -i "s|- name: operator 2 release|- name: $TAG|g" toc.yml
+      # 3rd Latest
+      - name: Checkout arcane-operator (3rd latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-operator
+          path: arcane-operator-3rd-latest
+          fetch-depth: 0
+      - name: Determine 3rd latest release commit for arcane-operator
+        run: |
+          cd arcane-operator-3rd-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 3 | head -1)
+          echo "Checking 3rd latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-operator
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-operator-3rd-latest/LAST_TAG.txt) 
+          echo "Checking 3rd latest out tag: $TAG"
+          sed -i "s|- name: operator 3 release|- name: $TAG|g" toc.yml
 
-      - name: Checkout arcane-framework
+      # Arcane Framework
+      - name: Checkout arcane-framework (main)
         uses: actions/checkout@v4
         with:
           repository: SneaksAndData/arcane-framework
-          path: arcane-framework
-
+          path: arcane-framework-main
+      # Latest
+      - name: Checkout arcane-framework (latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-framework
+          path: arcane-framework-latest
+          fetch-depth: 0
+      - name: Determine latest release commit for arcane-framework
+        run: |
+          cd arcane-framework-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 1 | head -1)
+          echo "Checking latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-framework
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-framework-latest/LAST_TAG.txt)
+          echo "Checking latest out tag: $TAG"
+          sed -i "s|- name: framework 1 release|- name: $TAG|g" toc.yml
+      # 2nd Latest
+      - name: Checkout arcane-framework (2nd latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-framework
+          path: arcane-framework-2nd-latest
+          fetch-depth: 0
+      - name: Determine 2nd latest release commit for arcane-framework
+        run: |
+          cd arcane-framework-2nd-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 2 | head -1)
+          echo "Checking 2nd latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-framework
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-framework-2nd-latest/LAST_TAG.txt)
+          echo "Checking latest out tag: $TAG"
+          sed -i "s|- name: framework 2 release|- name: $TAG|g" toc.yml
+      # 3rd Latest
+      - name: Checkout arcane-framework (3rd latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-framework
+          path: arcane-framework-3rd-latest
+          fetch-depth: 0
+      - name: Determine 3rd latest release commit for arcane-framework
+        run: |
+          cd arcane-framework-3rd-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 3 | head -1)
+          echo "Checking 3rd latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-framework
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-framework-3rd-latest/LAST_TAG.txt)
+          echo "Checking 3rd latest out tag: $TAG"
+          sed -i "s|- name: framework 3 release|- name: $TAG|g" toc.yml
+      # REST API
+      - name: Checkout arcane-rest-api (main)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-stream-rest-api
+          path: arcane-rest-api-main
+      # Latest
+      - name: Checkout arcane-rest-api (latest release)
+        uses: actions/checkout@v4
+        with:
+          repository: SneaksAndData/arcane-stream-rest-api
+          path: arcane-rest-api-latest
+          fetch-depth: 0
+      - name: Determine latest release commit for arcane-rest-api
+        run: |
+          cd arcane-rest-api-latest
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=version:refname | tail -n 1 | head -1)
+          echo "Checking latest out tag: $LAST_TAG"
+          echo "$LAST_TAG" > LAST_TAG.txt
+          git checkout $LAST_TAG
+      - name: Modify toc.yml with tags for arcane-rest-api
+        run: |
+          cd ${{ github.workspace }}
+          TAG=$(cat arcane-rest-api-latest/LAST_TAG.txt)
+          echo "Checking latest out tag: $TAG"
+          sed -i "s|- name: rest-api 1 release|- name: $TAG|g" toc.yml
+      # Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
