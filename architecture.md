@@ -15,7 +15,7 @@ Every operator class follows the following pattern:
 - Pushes the commands to a `CommandHandler` that retrieves additional context (if required) and executes the command.
 - A command handler may produce additional commands and invoke other handlers.
 
-![architecture diagram](architecture.jpg "Arcane Operator Architecture Diagram")
+![architecture diagram](images/architecture.jpg "Arcane Operator Architecture Diagram")
 
 ## Components
 ### Event-based services:
