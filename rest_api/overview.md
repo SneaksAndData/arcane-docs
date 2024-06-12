@@ -11,14 +11,14 @@ individually.
 
 ## Quick Start guide
 
-You can see an installation example in the [quick start guide](/arcane-rest-api-main/docs/quickstart.html).
+You can see an installation example in the [quick start guide](../arcane-rest-api-main/docs/quickstart.html).
 
 ## Configuration guide
 The plugin can be installed via Helm Chart, configuration is set via
 [values.yaml](https://github.com/SneaksAndData/arcane-stream-rest-api/blob/main/.helm/values.yaml)
 
 The short configuration options descriptions also available in the
-[configuration guide](/arcane-rest-api-main/docs/configuration.html).
+[configuration guide](../arcane-rest-api-main/docs/configuration.html).
 
 
 ## Source code and packages
