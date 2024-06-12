@@ -142,6 +142,8 @@
     ],
     "globalMetadata": {
       "_appName": "Arcane",
+      "_appLogoPath": "images/code.svg",
+      "_appFaviconPath": "images/code.svg",
       "_appTitle": "Arcane Documentation",
       "_enableSearch": true,
       "_disableContribution": true,
