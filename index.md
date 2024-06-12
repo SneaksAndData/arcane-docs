@@ -31,7 +31,7 @@ custom source and sink plugins.
 # Stream plugins
 
 Currently supported stream plugins in production-ready state:
-- [REST API](./arcane-rest-api-main/docs/quickstart.html)
+- [REST API](rest_api/overview.md)
 
 Stream plugins in development:
 - **Microsoft SQL Server**

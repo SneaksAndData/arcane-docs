@@ -143,7 +143,8 @@
       "_appName": "Arcane",
       "_appTitle": "Arcane Documentation",
       "_enableSearch": true,
-      "pdf": true
+      "pdf": true,
+      "_appLogoPath": "images/logo.png"
     }
   }
 }
