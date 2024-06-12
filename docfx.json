@@ -137,12 +137,14 @@
     "output": "_site",
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/material"
     ],
     "globalMetadata": {
       "_appName": "Arcane",
       "_appTitle": "Arcane Documentation",
       "_enableSearch": true,
+      "_disableContribution": true,
       "pdf": true
     }
   }

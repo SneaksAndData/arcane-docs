@@ -24,3 +24,4 @@ The short configuration options descriptions also available in the
 ## Source code and packages
 
 The source code is available in the [GitHub repository](https://github.com/SneaksAndData/arcane-stream-rest-api).
+The docker image can be pulled from 
