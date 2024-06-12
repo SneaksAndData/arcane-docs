@@ -162,6 +162,7 @@ jobs:
           TAG=$(cat arcane-framework-3rd-latest/LAST_TAG.txt)
           echo "Checking 3rd latest out tag: $TAG"
           sed -i "s|- name: framework 3 release|- name: $TAG|g" toc.yml
+
       # REST API
       - name: Checkout arcane-rest-api (main)
         uses: actions/checkout@v4

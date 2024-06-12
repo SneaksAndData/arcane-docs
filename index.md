@@ -1,8 +1,8 @@
-[//]: # (---)
+---
 
-[//]: # (_layout: landing)
+_layout: landing
 
-[//]: # (---)
+---
 
 # **ARCANE**
 
@@ -27,3 +27,8 @@ custom source and sink plugins.
 [Plugins](plugins.md) development guide.
 
 [Operator Architecture](architecture.md) overview.
+
+# Stream plugins
+
+Currently supported stream plugins in production-ready state:
+- [REST API](./arcane-rest-api-main/docs/quickstart.html)
