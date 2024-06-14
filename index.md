@@ -6,7 +6,6 @@ _layout: landing
 
 # **ARCANE**
 
-![Arcane overview >](images/overview.jpg){width=450 height=450,  style="float: right;"}
 
 * Arcane is a data streaming platform based on Akka.NET that focuses on providing a simple, reliable,
 and scalable solution for data streaming. It is designed to be Kubernetes-native and is built to be cloud-agnostic.
@@ -19,6 +18,8 @@ Kubernetes jobs.
 
 Arcane utilizes a plugin architecture that allows extending its functionality with
 custom source and sink plugins.
+
+![Arcane overview](images/overview.jpg)
 
 [Concepts](concepts.md) overview.
 
