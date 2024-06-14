@@ -147,7 +147,7 @@
       "_appTitle": "Arcane Documentation",
       "_enableSearch": true,
       "_disableContribution": true,
-      "pdf": true
+      "pdf": false
     }
   }
 }

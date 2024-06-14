@@ -19,7 +19,7 @@ Kubernetes jobs.
 Arcane utilizes a plugin architecture that allows extending its functionality with
 custom source and sink plugins.
 
-![Arcane overview](images/overview.jpg)
+![Arcane overview](images/overview.jpg){width=1076 height=1076,  style="display: block; margin-left: 15%"}
 
 [Concepts](concepts.md) overview.
 
@@ -29,12 +29,17 @@ custom source and sink plugins.
 
 [Operator Architecture](architecture.md) overview.
 
+&nbsp;
+
 # Stream plugins
 
-Currently supported stream plugins in production-ready state:
+## Currently supported stream plugins in production-ready state:
 - [REST API](rest_api/overview.md)
 
-Stream plugins in development:
-- **Microsoft SQL Server**
-- **Microsoft Dynamics 365 Change Feed**
-- **SAP data export**
+## Stream plugins coming soon:
+- [Microsoft SQL Server](https://github.com/SneaksAndData/arcane-stream-sqlserver-change-tracking/issues/7)
+- [Microsoft Dynamics 365 Change Feed](https://github.com/SneaksAndData/arcane-stream-cdm-change-feed/issues/7)
+- [Salesforce Bulk API](https://github.com/SneaksAndData/arcane-stream-salesforce/issues/5)
+
+## Public roadmap
+Arcane is under active development. Check the [roadmap](https://github.com/orgs/SneaksAndData/projects/21) for the upcoming features.
