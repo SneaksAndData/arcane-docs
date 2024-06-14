@@ -1,11 +1,7 @@
 name: Release docs
 run-name: Releasing docs by @${{ github.actor }}
 
-# temporary solution to test without merging to main
-on:
-  pull_request:
-    branches:
-      - main
+on: workflow_dispatch
 
 permissions:
   contents: read
