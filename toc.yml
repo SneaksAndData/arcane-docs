@@ -1,9 +1,23 @@
 items:
   - name: Home
     href: ./index.html
-  - name: Components
+  - name: Arcane Operator
     items:
-      - name: arcane-operator
-        href: ./arcane-operator/README.html
-      - name: arcane-framework
-        href: ./arcane-framework/README.html
+      - name: main
+        href: ./arcane-operator-main/README.html
+      - name: operator 1 release
+        href: ./arcane-operator-latest/README.html
+      - name: operator 2 release
+        href: ./arcane-operator-2nd-latest/README.html
+      - name: operator 3 release
+        href: ./arcane-operator-3rd-latest/README.html
+  - name: Arcane Framework
+    items:
+      - name: main
+        href: ./arcane-framework-main/README.html
+      - name: framework 1 release
+        href: ./arcane-framework-latest/README.html
+      - name: framework 2 release
+        href: ./arcane-framework-2nd-latest/README.html
+      - name: framework 3 release
+        href: ./arcane-framework-3rd-latest/README.html
