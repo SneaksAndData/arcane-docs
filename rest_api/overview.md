@@ -25,4 +25,4 @@ The short configuration options descriptions also available in the
 
 The source code is available in the [GitHub repository](https://github.com/SneaksAndData/arcane-stream-rest-api).
 The docker image can be pulled from [GitHub container registry](https://github.com/SneaksAndData/arcane-stream-rest-api/pkgs/container/arcane-stream-rest-api).
-The Helm Chart can be pulled from [GitHub ocntainer registry](https://github.com/SneaksAndData/arcane-stream-rest-api/pkgs/container/helm%2Farcane-stream-rest-api)
+The Helm Chart can be pulled from [GitHub container registry](https://github.com/SneaksAndData/arcane-stream-rest-api/pkgs/container/helm%2Farcane-stream-rest-api)
