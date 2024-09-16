@@ -28,6 +28,14 @@ custom source and sink plugins.
 
 ![Arcane overview](images/overview.jpg){width=1076 height=1076,  style="display: block; margin-left: 15%"}
 
+[Concepts](concepts.md) overview.
+
+[Quickstart](quickstart.md) deployment guide.
+
+[Plugins](plugins.md) development guide.
+
+[Operator Architecture](architecture.md) overview.
+
 ## Arcane video overview on DASH 2024
 
 <iframe width="560"
@@ -37,14 +45,6 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 referrerpolicy="strict-origin-when-cross-origin"
 allowfullscreen></iframe>
-
-[Concepts](concepts.md) overview.
-
-[Quickstart](quickstart.md) deployment guide.
-
-[Plugins](plugins.md) development guide.
-
-[Operator Architecture](architecture.md) overview.
 
 &nbsp;
 
